@@ -1,0 +1,25 @@
+CREATE TABLE transactions (
+acquirer_bank_code VARCHAR(20),
+issuer_bank_code VARCHAR(20),
+ outlet_number VARCHAR(20),
+       terminal_id VARCHAR(20),
+       terminal_type VARCHAR(20),
+       merchant_city VARCHAR(20),
+       merchant_state VARCHAR(20),
+       merchant_country VARCHAR(20),
+       merchant_zipcode VARCHAR(20),
+       MCC VARCHAR(20),
+       MCG VARCHAR(20),
+       card_type VARCHAR(20),
+       product_type VARCHAR(20),
+       network_code VARCHAR(20),
+       acquirer_id VARCHAR(20),
+       transaction_amount int(20),
+       transaction_currency int(20),
+       interchange_fees int(20),
+       surcharge_billing_amount int(20),
+       device_type_indicator VARCHAR(20),
+       service_tax int(20),
+       processing_code VARCHAR(20));
+       
+       
