@@ -1,25 +1,73 @@
-CREATE TABLE transactions (
-acquirer_bank_code VARCHAR(20),
-issuer_bank_code VARCHAR(20),
- outlet_number VARCHAR(20),
-       terminal_id VARCHAR(20),
-       terminal_type VARCHAR(20),
-       merchant_city VARCHAR(20),
-       merchant_state VARCHAR(20),
-       merchant_country VARCHAR(20),
-       merchant_zipcode VARCHAR(20),
-       MCC VARCHAR(20),
-       MCG VARCHAR(20),
-       card_type VARCHAR(20),
-       product_type VARCHAR(20),
-       network_code VARCHAR(20),
-       acquirer_id VARCHAR(20),
-       transaction_amount int(20),
-       transaction_currency int(20),
-       interchange_fees int(20),
-       surcharge_billing_amount int(20),
-       device_type_indicator VARCHAR(20),
-       service_tax int(20),
-       processing_code VARCHAR(20));
-       
-       
+-- MySQL dump 10.13  Distrib 8.0.16, for Win64 (x86_64)
+--
+-- Host: localhost    Database: brainovate
+-- ------------------------------------------------------
+-- Server version	8.0.16
+
+/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
+/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
+/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
+ SET NAMES utf8 ;
+/*!40103 SET @OLD_TIME_ZONE=@@TIME_ZONE */;
+/*!40103 SET TIME_ZONE='+00:00' */;
+/*!40014 SET @OLD_UNIQUE_CHECKS=@@UNIQUE_CHECKS, UNIQUE_CHECKS=0 */;
+/*!40014 SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0 */;
+/*!40101 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='NO_AUTO_VALUE_ON_ZERO' */;
+/*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
+
+--
+-- Table structure for table `transactions`
+--
+
+DROP TABLE IF EXISTS `transactions`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+ SET character_set_client = utf8mb4 ;
+CREATE TABLE `transactions` (
+  `transaction_id` int(20) NOT NULL AUTO_INCREMENT,
+  `acquirer_bank_code` varchar(20) DEFAULT NULL,
+  `issuer_bank_code` varchar(20) DEFAULT NULL,
+  `outlet_number` varchar(20) DEFAULT NULL,
+  `terminal_id` varchar(20) DEFAULT NULL,
+  `terminal_type` varchar(20) DEFAULT NULL,
+  `merchant_city` varchar(20) DEFAULT NULL,
+  `merchant_state` varchar(20) DEFAULT NULL,
+  `merchant_country` varchar(20) DEFAULT NULL,
+  `merchant_zipcode` varchar(20) DEFAULT NULL,
+  `MCC` varchar(20) DEFAULT NULL,
+  `MCG` varchar(20) DEFAULT NULL,
+  `card_type` varchar(20) DEFAULT NULL,
+  `product_type` varchar(20) DEFAULT NULL,
+  `network_code` varchar(20) DEFAULT NULL,
+  `acquirer_id` varchar(20) DEFAULT NULL,
+  `transaction_amount` int(20) DEFAULT NULL,
+  `transaction_currency` varchar(20) DEFAULT NULL,
+  `interchange_fees` int(20) DEFAULT NULL,
+  `surcharge_billing_amount` int(20) DEFAULT NULL,
+  `device_type_indicator` varchar(20) DEFAULT NULL,
+  `service_tax` int(20) DEFAULT NULL,
+  `processing_code` varchar(20) DEFAULT NULL,
+  `transaction_date` datetime DEFAULT NULL,
+  PRIMARY KEY (`transaction_id`)
+) ENGINE=InnoDB AUTO_INCREMENT=22 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `transactions`
+--
+
+LOCK TABLES `transactions` WRITE;
+/*!40000 ALTER TABLE `transactions` DISABLE KEYS */;
+INSERT INTO `transactions` VALUES (1,'HDFC BANK','SBI','56789','2344','POS','PUNE','MH','INDIA','411006','1234','Indian Oil','EMV','Debit','MASTERCARD','1234',500,'INR',5,1,'POS',2,'PURCHASE','2019-06-02 11:40:35'),(2,'HDFC BANK','SBI','56789','2344','POS','PUNE','MH','INDIA','411006','1234','Indian Oil','MAGNATIC STRIPE','Debit','MASTERCARD','1234',700,'INR',5,1,'POS',2,'PURCHASE','2019-06-02 11:40:35'),(3,'HDFC BANK','SBI','56789','2344','POS','PUNE','MH','INDIA','411006','1234','Indian Oil','MAGNATIC STRIPE','Debit','MASTERCARD','1234',700,'INR',5,1,'POS',2,'PURCHASE','2019-06-02 11:40:35'),(4,'HDFC BANK','SBI','56789','2344','POS','PUNE','MH','INDIA','411006','1234','Indian Oil','MAGNATIC STRIPE','Debit','MASTERCARD','1234',700,'INR',5,1,'POS',2,'PURCHASE','2019-06-02 11:40:35'),(5,'HDFC BANK','SBI','56789','2344','POS','PUNE','MH','INDIA','411006','1234','Indian Oil','MAGNATIC STRIPE','Debit','MASTERCARD','1234',700,'INR',5,1,'POS',2,'PURCHASE','2019-06-03 11:40:35'),(6,'ICICI BANK','SBI','324234','2344','POS','PUNE','MH','INDIA','411027','1234','Future Group','MAGNATIC STRIPE','Debit','MASTERCARD','1234',700,'INR',5,1,'POS',2,'PURCHASE','2019-06-02 11:40:35'),(7,'ICICI BANK','SBI','324234','2344','POS','PUNE','MH','INDIA','411027','1234','Future Group','MAGNATIC STRIPE','Debit','MASTERCARD','1234',700,'INR',5,1,'POS',2,'PURCHASE','2019-06-02 11:40:35'),(8,'ICICI BANK','SBI','324234','2344','POS','PUNE','MH','INDIA','411027','1234','Future Group','MAGNATIC STRIPE','Debit','MASTERCARD','1234',700,'INR',5,1,'POS',2,'PURCHASE','2019-06-02 11:40:35'),(9,'ICICI BANK','SBI','324234','2344','POS','PUNE','MH','INDIA','411027','1234','Future Group','MAGNATIC STRIPE','Debit','MASTERCARD','1234',700,'INR',5,1,'POS',2,'PURCHASE','2019-06-02 11:40:35'),(10,'ICICI BANK','HDFC BANK','324234','2344','API','MUMBAI','MH','INDIA','410006','1234','BigTree Enterprizes','MAGNATIC STRIPE','Debit','MASTERCARD','1234',700,'INR',5,1,'API',2,'PURCHASE','2019-06-02 11:40:35'),(11,'ICICI BANK','HDFC BANK','324234','2344','API','MUMBAI','MH','INDIA','410006','1234','BigTree Enterprizes','MAGNATIC STRIPE','Debit','MASTERCARD','1234',700,'INR',5,1,'API',2,'PURCHASE','2019-06-02 11:40:35'),(12,'ICICI BANK','HDFC BANK','324234','2344','API','MUMBAI','MH','INDIA','410006','1234','BigTree Enterprizes','MAGNATIC STRIPE','Debit','MASTERCARD','1234',700,'INR',5,1,'API',2,'PURCHASE','2019-06-02 11:40:35'),(13,'ICICI BANK','HDFC BANK','324234','2344','API','MUMBAI','MH','INDIA','410006','1234','BigTree Enterprizes','MAGNATIC STRIPE','Debit','MASTERCARD','1234',700,'INR',5,1,'API',2,'PURCHASE','2019-06-02 11:40:35'),(14,'SBI','HDFC BANK','523234','2344','API','MUMBAI','MH','INDIA','410006','1234','Indigo','MAGNATIC STRIPE','Credit','VISA','2344',3000,'INR',5,1,'API',2,'PURCHASE','2019-06-02 11:40:35'),(15,'SBI','HDFC BANK','523234','2344','API','MUMBAI','MH','INDIA','410006','1234','Indigo','MAGNATIC STRIPE','Credit','VISA','2344',3000,'INR',5,1,'API',2,'PURCHASE','2019-06-02 11:40:35'),(16,'SBI','HDFC BANK','523234','2344','API','MUMBAI','MH','INDIA','410006','1234','Indigo','MAGNATIC STRIPE','Credit','VISA','2344',3000,'INR',5,1,'API',2,'PURCHASE','2019-06-02 11:40:35'),(17,'SBI','HDFC BANK','523234','2344','API','MUMBAI','MH','INDIA','410006','1234','Indigo','MAGNATIC STRIPE','Credit','VISA','2344',3000,'INR',5,1,'API',2,'PURCHASE','2019-06-01 11:40:35'),(18,'SBI','HDFC BANK','523234','2344','API','MUMBAI','MH','INDIA','410006','1234','GoIbibo Group','EMV','Credit','VISA','2344',5000,'INR',5,1,'API',2,'PURCHASE','2019-06-01 11:40:35'),(19,'SBI','HDFC BANK','523234','2344','API','MUMBAI','MH','INDIA','410006','1234','GoIbibo Group','EMV','Credit','VISA','2344',6000,'INR',5,1,'API',2,'PURCHASE','2019-06-01 11:40:35'),(20,'SBI','HDFC BANK','523234','2344','API','MUMBAI','MH','INDIA','410006','1234','GoIbibo Group','EMV','Credit','VISA','2344',1200,'INR',5,1,'API',2,'PURCHASE','2019-06-01 11:40:35'),(21,'SBI','HDFC BANK','523234','2344','API','MUMBAI','MH','INDIA','410006','1234','GoIbibo Group','EMV','Credit','VISA','2344',4400,'INR',5,1,'API',2,'PURCHASE','2019-06-01 11:40:35');
+/*!40000 ALTER TABLE `transactions` ENABLE KEYS */;
+UNLOCK TABLES;
+/*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
+
+/*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
+/*!40014 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS */;
+/*!40014 SET UNIQUE_CHECKS=@OLD_UNIQUE_CHECKS */;
+/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
+/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
+/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
+/*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
+
+-- Dump completed on 2019-06-02 15:24:57
