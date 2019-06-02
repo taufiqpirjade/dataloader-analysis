@@ -1,5 +1,7 @@
 package com.attra.dataloader.springdataloader.entity;
 
+import java.sql.Date;
+
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -13,7 +15,7 @@ public class Transactions {
 	
 	@Id
 	@NotNull
-	@GeneratedValue(strategy = GenerationType.AUTO)
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int transactionId;
 	
 	private String acquirerBankCode;
@@ -32,7 +34,7 @@ public class Transactions {
 	
 	private String merchantCountry;
 	
-	private String merchantZipCode;
+	private String merchantZipcode;
 	
 	private String mcc;
 	
@@ -48,7 +50,7 @@ public class Transactions {
 	
 	private int transactionAmount;
 	
-	private int transactionCurrency;
+	private String transactionCurrency;
 	
 	private int interchangeFees;
 	
@@ -59,6 +61,7 @@ public class Transactions {
 	private String processingCode;
 	
 	private int serviceTax;
+	private Date transactionDate;
 
 	public String getAcquirerBankCode() {
 		return acquirerBankCode;
@@ -125,11 +128,11 @@ public class Transactions {
 	}
 
 	public String getMerchantZipCode() {
-		return merchantZipCode;
+		return merchantZipcode;
 	}
 
 	public void setMerchantZipCode(String merchantZipCode) {
-		this.merchantZipCode = merchantZipCode;
+		this.merchantZipcode = merchantZipCode;
 	}
 
 	public String getMcc() {
@@ -188,11 +191,11 @@ public class Transactions {
 		this.transactionAmount = transactionAmount;
 	}
 
-	public int getTransactionCurrency() {
+	public String getTransactionCurrency() {
 		return transactionCurrency;
 	}
 
-	public void setTransactionCurrency(int transactionCurrency) {
+	public void setTransactionCurrency(String transactionCurrency) {
 		this.transactionCurrency = transactionCurrency;
 	}
 
@@ -234,6 +237,35 @@ public class Transactions {
 
 	public void setServiceTax(int serviceTax) {
 		this.serviceTax = serviceTax;
+	}
+
+	public Date getTransactionDate() {
+		return transactionDate;
+	}
+
+	public void setTransactionDate(Date transactionDate) {
+		this.transactionDate = transactionDate;
+	}
+
+	@Override
+	public String toString() {
+		return "Transactions [transactionId=" + transactionId
+				+ ", acquirerBankCode=" + acquirerBankCode
+				+ ", issuerBankCode=" + issuerBankCode + ", outletNumber="
+				+ outletNumber + ", terminalId=" + terminalId
+				+ ", terminalType=" + terminalType + ", merchantCity="
+				+ merchantCity + ", merchantState=" + merchantState
+				+ ", merchantCountry=" + merchantCountry + ", merchantZipcode="
+				+ merchantZipcode + ", mcc=" + mcc + ", mcg=" + mcg
+				+ ", cardType=" + cardType + ", productType=" + productType
+				+ ", networkCode=" + networkCode + ", acquirerId=" + acquirerId
+				+ ", transactionAmount=" + transactionAmount
+				+ ", transactionCurrency=" + transactionCurrency
+				+ ", interchangeFees=" + interchangeFees
+				+ ", deviceTypeIndicator=" + deviceTypeIndicator
+				+ ", surchargeBillingAmount=" + surchargeBillingAmount
+				+ ", processingCode=" + processingCode + ", serviceTax="
+				+ serviceTax + "]";
 	}
 	
 	

@@ -61,7 +61,7 @@ public class WekaTest {
 	}
  
 	public static void main(String[] args) throws Exception {
-		BufferedReader datafile = readDataFile("C:\\Taufik\\Workspace\\spring-dataloader\\spring-dataloader\\src\\main\\java\\com\\attra\\dataloader\\springdataloader\\weather.txt");
+		BufferedReader datafile = readDataFile("C:\\Taufik\\Workspace\\spring-dataloader\\dataloader-analysis\\spring-dataloader\\src\\main\\java\\com\\attra\\dataloader\\springdataloader\\weather.txt");
  
 		Instances data = new Instances(datafile);
 		data.setClassIndex(data.numAttributes() - 1);
@@ -75,10 +75,10 @@ public class WekaTest {
  
 		// Use a set of classifiers
 		Classifier[] models = { 
-				new J48(), // a decision tree
-				new PART(), 
+				//new J48(), // a decision tree
+				//new PART(), 
 				new DecisionTable(),//decision table majority classifier
-				new DecisionStump() //one-level decision tree
+				//new DecisionStump() //one-level decision tree
 		};
  
 		// Run for each model
@@ -94,7 +94,7 @@ public class WekaTest {
 				predictions.appendElements(validation.predictions());
  
 				// Uncomment to see the summary for each training-testing pair.
-				System.out.println(models[j].toString());
+				//System.out.println(models[j].toString());
 			}
  
 			// Calculate overall accuracy of current classifier on all splits
